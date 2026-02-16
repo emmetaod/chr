@@ -1,0 +1,183 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: #1a1a2e;
+  color: #fff;
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.nav-links a.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.main {
+  flex: 1;
+  padding: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Form Page */
+.form-page h1 {
+  margin-bottom: 1rem;
+}
+
+.form-container {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container iframe {
+  display: block;
+}
+
+/* Reports Page */
+.reports-page h1 {
+  margin-bottom: 1rem;
+}
+
+.filters {
+  display: flex;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.filters input[type='date'] {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.btn-clear {
+  padding: 0.45rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-clear:hover {
+  background: #f5f5f5;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.card-label {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead th {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+tbody tr:hover {
+  background: #f8f9fa;
+}
+
+td.num {
+  text-align: center;
+}
+
+td.empty {
+  text-align: center;
+  padding: 2rem;
+  color: #999;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #c00;
+}
