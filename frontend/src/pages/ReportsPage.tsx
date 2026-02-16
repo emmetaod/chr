@@ -44,7 +44,14 @@ function ReportsPage() {
     fetch(API_URL)
       .then((res) => res.json())
       .then((json) => {
-        setData(json)
+        const rows: string[][] = json.data
+        const headers = rows[0]
+        const records = rows.slice(1).map((row) => {
+          const obj: Record<string, string | number> = {}
+          headers.forEach((h, i) => (obj[h] = row[i]))
+          return obj as unknown as VisitRecord
+        })
+        setData(records)
         setLoading(false)
       })
       .catch((err) => {
@@ -55,8 +62,9 @@ function ReportsPage() {
 
   const filtered = useMemo(() => {
     return data.filter((row) => {
-      const visit = row['Date of Visit']
-      if (!visit) return false
+      const raw = row['Date of Visit']
+      if (!raw) return false
+      const visit = raw.slice(0, 10) // extract YYYY-MM-DD from ISO string
       if (startDate && visit < startDate) return false
       if (endDate && visit > endDate) return false
       return true
